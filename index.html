@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#8f1422"><meta name="description" content="Loreak · seguiment del cicle menstrual, període i dies fèrtils."><link rel="manifest" href="manifest.json"><link rel="icon" href="assets/logo.png"><link rel="stylesheet" href="style.css"><title>Loreak · Cicle</title>
+</head>
+<body>
+<div id="app">
+<header class="topbar"><img src="assets/logo.png" alt="Loreak"><div><strong>Loreak</strong><small>El teu cicle, al teu ritme</small></div><button id="installBtn" class="iconBtn" hidden>＋</button></header>
+<main>
+<section class="hero card"><div><span class="eyebrow">AVUI</span><h1 id="todayTitle">—</h1><p id="cycleSummary">Afegeix el primer període per començar.</p></div><button id="addPeriod" class="primary">Registrar període</button></section>
+<section class="stats"><div class="stat card"><span>🩸</span><b id="periodInfo">—</b><small>Pròxim període</small></div><div class="stat card"><span>🌿</span><b id="fertileInfo">—</b><small>Dies fèrtils</small></div><div class="stat card"><span>🟣</span><b id="ovulationInfo">—</b><small>Ovulació estimada</small></div></section>
+<section class="card calendarCard"><div class="sectionHead"><button id="prevMonth" class="navBtn">‹</button><h2 id="monthLabel"></h2><button id="nextMonth" class="navBtn">›</button></div><div class="weekdays"><span>Dl</span><span>Dt</span><span>Dc</span><span>Dj</span><span>Dv</span><span>Ds</span><span>Dg</span></div><div id="calendar" class="calendar"></div><div class="legend"><span><i class="dot period"></i>Període</span><span><i class="dot fertile"></i>Fèrtil</span><span><i class="dot ovulation"></i>Ovulació</span></div></section>
+<section class="card actionCard"><h2>Registrar avui</h2><div class="quickGrid"><button data-log="period">🩸<span>Període</span></button><button data-log="symptoms">❤️<span>Símptomes</span></button><button data-log="flow">💧<span>Flux</span></button><button data-log="note">📝<span>Nota</span></button></div></section>
+<section class="card history"><div class="sectionHead"><h2>Historial</h2><button id="settingsBtn" class="textBtn">Configuració</button></div><div id="historyList"><p class="muted">Encara no hi ha cicles registrats.</p></div></section>
+<section class="privacy"><strong>🔒 Privacitat</strong><span>Les dades de Loreak es guarden localment al teu dispositiu.</span></section>
+</main>
+<nav class="bottom"><button class="active">🌸<span>Avui</span></button><button id="calendarNav">📅<span>Calendari</span></button><button id="historyNav">📊<span>Historial</span></button><button id="settingsNav">⚙️<span>Ajustos</span></button></nav>
+</div>
+<div id="modal" class="modal" hidden><div class="sheet"><button id="closeModal" class="close">×</button><div id="modalContent"></div></div></div>
+<script src="app.js"></script>
+</body></html>
