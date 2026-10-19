@@ -18,21 +18,22 @@
     deferredPrompt=e;
     show();
   });
-  window.addEventListener('appinstalled',()=>{deferredPrompt=null;hide();});
-  async function install(){
-    if(!deferredPrompt){
-      if(!standalone()) alert('Per instal·lar Loreak, obre-la amb Chrome i utilitza l’opció «Instal·la l’aplicació» o «Afegeix a la pantalla d’inici».');
-      return;
-    }
-    deferredPrompt.prompt();
-    try{await deferredPrompt.userChoice;}catch(e){}
+  window.addEventListener('appinstalled',()=>{
     deferredPrompt=null;
+    hide();
+  });
+  async function install(){
+    if(!deferredPrompt||standalone())return;
+    const promptEvent=deferredPrompt;
+    deferredPrompt=null;
+    promptEvent.prompt();
+    try{await promptEvent.userChoice;}catch(e){}
     hide();
   }
   ready(()=>{
     const b=document.getElementById('installBtn'),banner=document.getElementById('installBannerBtn');
     if(b)b.addEventListener('click',install);
     if(banner)banner.addEventListener('click',install);
-    if(!standalone())setTimeout(show,1200);
+    if(standalone())hide();
   });
 })();
