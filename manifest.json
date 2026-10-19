@@ -1,1 +1,21 @@
-{"name":"Loreak · Cicle menstrual","short_name":"Loreak","description":"Seguiment del cicle menstrual, període, dies fèrtils i ovulació estimada.","lang":"ca","start_url":"./","display":"standalone","background_color":"#fffdfc","theme_color":"#8f1422","icons":[{"src":"grok_1792361036369.jpg","sizes":"1031x1536","type":"image/jpeg","purpose":"any"}]}
+{
+  "id": "./",
+  "name": "Loreak · Cicle menstrual",
+  "short_name": "Loreak",
+  "description": "Seguiment del cicle menstrual, període, dies fèrtils i ovulació estimada.",
+  "lang": "ca",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#fffdfc",
+  "theme_color": "#8f1422",
+  "icons": [
+    {
+      "src": "grok_1792361036369.jpg",
+      "sizes": "192x192 512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}
